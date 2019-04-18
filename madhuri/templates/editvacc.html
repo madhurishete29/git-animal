@@ -1,0 +1,59 @@
+<form action="{{ url_for('updatevacc') }}" method="post">
+    <div class="md-modal md-effect-19" id="modal-19" tabindex="-1" style="z-index: 100 !important;">
+        <div class="md-content">
+
+            <h3>Vaccine</h3>
+
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-7">
+                    <div class="form-group">
+                        <label class=" col-form-label" style="color: black">Animal Name</label><br>
+                        <select class="js-example-data-array col-sm-12 form-control form-control-round"
+                                name="species_id">
+                            {% for value in values%}
+                            <option value="{{value[0]}}">{{value[1]}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" style="color: black"><B>Type</B></label>
+                        <select class="js-example-data-array col-sm-12" name="type"
+                                id="t_id">
+                            {% for value in values1%}
+                            <option value="{{value[0]}}">{{value[1]}}</option>
+                            {% endfor %}
+
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" style="color: black"><B>Date Of
+                            Vaccine</B></label>
+                        <input id="dropper-default"
+                               class="form-control datepicker form-control form-control-round"
+                               type="text" name="date"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Cost</label>
+                        <input type="text" class="form-control form-control-round" id="c_id"
+                               name="cost">
+                        <input type="hidden" name="vacc_id" id="vacc-id">
+                    </div>
+                </div>
+            </div>
+            <center>
+                <button type="button"
+                        class="btn btn-danger waves-effect md-close">
+                    Close
+                </button>
+                <button type="submit"
+                        class="btn btn-success waves-effect md-close">
+                    Submit
+                </button>
+            </center>
+            <br>
+
+        </div>
+    </div>
+
+</form>

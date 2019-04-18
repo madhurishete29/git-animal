@@ -1,0 +1,105 @@
+<form action="{{ url_for('peti') }}" method="post">
+    <div class="md-modal md-effect-19" id="modal-19" tabindex="-1" style="z-index: 100 !important;">
+        <div class="md-content">
+            <h3>Pet</h3>
+            <div class="row">
+                <di class="row">
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label class="col-form-label" style="color: black">Pet Name:</label>
+                            <input type="text" class="form-control" name="pet_name">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" style="color: black"><B>Client:</B></label>
+                            <select class="js-example-data-array col-sm-12" name="client_id">
+                                {% for value in values6 %}
+                                <option value="{{ value[0] }}">{{ value[1] }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" style="color: black"><B>Breed:</B></label>
+                            <select class="js-example-data-array col-sm-12" name="breed_name">
+                                {% for value in values1 %}
+                                <option value="{{ value[0] }}">{{ value[1] }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" style="color: black"><B>Color:</B></label>
+                            <select class="js-example-data-array col-sm-12" name="color_name">
+                                {% for value in values4 %}
+                                <option value="{{ value[0] }}">{{ value[1] }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-group ">
+                            <label class="col-form-label" style="color: black">Licence Number:</label>
+                            <input type="text" class="form-control" name="licence_name">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" style="color: black"><B>Hair:</B></label>
+                            <select class="js-example-data-array col-sm-12" name="hair_name">
+                                {% for value in values3 %}
+                                <option value="{{ value[0] }}">{{ value[1] }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" style="color: black"><B>Vaccined?:</B></label>
+                            <select class="js-example-data-array col-sm-12" name="vacc">
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" style="color: black"><B>Sex:</B></label>
+                            <select class="js-example-data-array col-sm-12" name="sex">
+                                <option>Female</option>
+                                <option>Male</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label class="col-form-label" style="color: black"><B>Date of birth:</B></label>
+                            <input id="dropper-default" class="form-control datepicker" type="text" name="date"/>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-form-label" style="color: black"><B>Sepcies:</B></label>
+                            <select class="js-example-data-array col-sm-12" name="sepcies_name">
+                                {% for value in values %}
+                                <option value="{{ value[0] }}">{{ value[1] }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" style="color: black"><B>Size:</B></label>
+                            <select class="js-example-data-array col-sm-12" name="size_name">
+                                {% for value in values2 %}
+                                <option value="{{ value[0] }}">{{ value[1] }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                    </div>
+                </di>
+            </div>
+            <center>
+                    <button type="button"
+                            class="btn btn-primary waves-effect md-close">
+                        Close
+                    </button>
+                    <button type="submit"
+                            class="btn btn-danger waves-effect">
+                        Submit
+                    </button>
+                </center>
+        </div>
+    </div>
+</form>

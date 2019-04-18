@@ -1,0 +1,50 @@
+{% extends 'index.html'%}
+{% block body%}
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="row">
+            <div class="col-lg-3">
+
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Update</h5><br>
+                        <form action="{{url_for('editdoctor')}}" method="post">
+                            <div class="form-group">
+                                <label class="col-form-label">First Name:</label>
+                                <input type="text" class="form-control form-control-round" id="f_id"
+                                       name="fname">
+                                <input type="hidden" name="doct_id" id="doct-id">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label" style="color: black">Phone Number:</label>
+                                <input type="text" class="form-control form-control-round" name="dphone"
+                                       maxlength="10" id="phone_id">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label" style="color: black">Email Id:</label>
+                                <input type="text" class="form-control form-control-round" name="email" id="e_id">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Hospital Name:</label>
+                                <input type="text" class="form-control form-control-round" id="h_id"
+                                       name="hname">
+                            </div>
+                            <center>
+                                <button class="btn btn waves-effect waves-light btn-success btn-square">Submit
+                                </button>
+                                <button class="btn btn waves-effect waves-light btn-danger btn-square"
+                                        href="{{url_for('doctorindex')}}">
+                                    Cancel
+                                </button>
+                            </center>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

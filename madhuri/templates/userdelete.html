@@ -1,0 +1,24 @@
+<form action="{{url_for('deleteuser')}}" method="post" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html">
+    <div class="md-modal md-effect-2" id="modal-2" >
+        <div class="md-content" style="border: solid black">
+            <h3>Delete</h3>
+            <div>
+                <strong>You are going to Delete this forever !!</strong><br>
+                 <input type="hidden" name="user_id" id="user-id">
+                <br>
+            <center>
+                <button type="button"
+                        class="btn btn-success btn-round waves-effect waves-light md-close">
+                    Close
+                </button>
+                <button type="submit"
+                        class="btn btn-danger btn-round waves-effect waves-light md-close">
+                    Delete
+                </button>
+            </center>
+
+            </div>
+        </div>
+    </div>
+</form>

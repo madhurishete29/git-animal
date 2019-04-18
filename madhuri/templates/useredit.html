@@ -1,0 +1,47 @@
+<form action="{{ url_for('updateuseri') }}" method="post">
+    <div class="md-modal md-effect-19" id="modal-18" tabindex="-1" style="z-index: 100 !important;">
+
+        <div class="md-content">
+
+            <h3>User</h3>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="col-form-label" style="color: black">First Name:</label>
+                        <input type="text" class="form-control" name="first_Name" id="first-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" style="color: black">Email Id:</label>
+                        <input type="text" class="form-control" name="email" id="email-id"required>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="col-form-label" style="color: black">Last Name:</label>
+                        <input type="text" class="form-control" name="last_Name" id="last-name"  required>
+                        <input type="hidden" name="usere_id" id="usere-id">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" style="color: black">Username:</label>
+                        <input type="text" class="form-control" name="username" id="userna" required>
+                    </div>
+                </div>
+            </div>
+            <center>
+                <button type="button"
+                        class="btn btn-danger btn-round waves-effect waves-light md-close">
+                    Close
+                </button>
+                <button type="submit"
+                        class="btn btn-success btn-round waves-effect waves-light ">
+                    Submit
+                </button>
+            </center>
+            <br>
+        </div>
+    </div>
+</form>
+

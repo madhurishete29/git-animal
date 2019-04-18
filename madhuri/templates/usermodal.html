@@ -1,0 +1,67 @@
+<form action="{{ url_for('useri') }}" method="post">
+<div class="md-modal md-effect-19" id="modal-19" tabindex="-1" style="z-index: 100 !important;">
+    <div class="md-content">
+
+        <h3>User</h3>
+
+        <div class="row">
+            <div class="col-lg-6">
+                 <div class="form-group">
+                    <label class="col-form-label" style="color: black">First Name:</label>
+                    <input type="text" class="form-control" name="first_Name">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" style="color: black">Email Id:</label>
+                    <input type="text" class="form-control" name="email">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" style="color: black">Password:</label>
+                    <input type="password" class="form-control" name="password" onkeyup='check();' id="password">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                 <div class="form-group">
+                    <label class="col-form-label" style="color: black">Last Name:</label>
+                    <input type="text" class="form-control" name="last_Name">
+                </div>
+             <div class="form-group">
+                    <label class="col-form-label" style="color: black">Username:</label>
+                    <input type="text" class="form-control" name="username">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" style="color: black">Confirm Password:</label>
+                    <input type="password" class="form-control" name="cpassword" onkeyup='check();'id="confirm_password">
+                </div>
+
+        </div>
+    </div>
+    <center>
+        <button type="button"
+                class="btn btn-danger btn-round waves-effect waves-light md-close">
+            Close
+        </button>
+        <button type="submit"
+                class="btn btn-success btn-round waves-effect waves-light">
+            Submit
+        </button>
+    </center>
+    <br>
+
+</div>
+</div>
+
+ </form>
+<script type="text/javascript">
+var password = document.getElementById("password")
+  , confirm_password = document.getElementById("confirm_password");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+</script>

@@ -1,0 +1,150 @@
+{% extends 'index.html' %}
+{% block body %}
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card sale-card">
+
+            <h3><i class="fa fa-angle-right"></i><b> Incident </b></h3>
+
+            <div class="box box-primary" id="incident-table">
+                <div class="box-header">
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="table-responsive" style="overflow-x:auto;">
+                        <table width="100%" border="1px grey">
+
+                            <tr>
+                                <th width="30%">Incident Type</th>
+                                <th width="40%">Description</th>
+                                <th width="70%">Action</th>
+                            </tr>
+                            {% for value in values%}
+                            <tr>
+                                <td width="20%">{{value[1]}}</td>
+                                <td width="40%">{{value[2]}}</td>
+                                <td width="40%">
+                                    <center>
+                                        <a class="btn btn-round btn-success edit-button" data-id={{value[0]}}
+                                           data-name="{{value[1]}}" data-desc="{{value[2]}}"><i
+                                                class="fa fa-pencil"></i></a>
+                                        <button type="button" class="btn btn-round btn-danger deletei"
+                                                data-toggle="modal" data-target="#deleteiModal" data-id="{{value[0]}}">
+                                            <i class="fa fa-trash"></i></button>
+                                    </center>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+        <div id="update-div" hidden>
+             <form>
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="type-number">Type Of Incident</label>
+                            <input type="text" class="form-control" id="type-of-incident1" name="type_of_incident"
+                                   autofocus placeholder="Enter Type Of incident" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="type-description">Description</label>
+                            <input type="text" class="form-control" id="description1" name="description" autofocus
+                                   placeholder="Enter Description" required>
+                        </div>
+                        <input type="hidden" name="incident_id" id="incident-id">
+                        <center>
+                            <!-- <div class="btn-group"> -->
+                            <button type="button" class="btn btn-round btn-danger" id="cancel">Cancel
+                            </button>
+                            <button type="Submit" class="btn btn-round btn-success">Submit</button>
+                            <!-- </div> -->
+                        </center>
+                    </div>
+                </form>
+         </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+
+        <div class="form-panel">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Incident</h3>
+                </div>
+                <form>
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="type-number">Type Of Incident</label>
+                            <input type="text" class="form-control" id="type-of-incident2" name="type_of_incident" autofocus
+                                   placeholder="Enter Type Of Incident" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="type-description">Description</label>
+                            <input type="text" class="form-control" id="description" name="description" autofocus
+                                   placeholder="Enter Description" required>
+                        </div>
+                        <button type="Submit" class="btn btn-round btn-success" style="margin-left: 78%">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    $(".myselect").select2({
+        width: '100%',
+    })
+
+</script>
+<script>
+    $(function () {
+        $("#datepicker").datetimepicker({
+            // timepicker:false
+        });
+    });
+</script>
+<!-- <script>
+   $( function() {
+       $( "#datepicker1" ).datepicker({
+           width:'100%',
+       });
+    } );
+</script> -->
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker();
+    });
+</script>
+
+<script type="text/javascript">
+    $(".edit-button").click(function () {
+        $("#incident-table").hide();
+        $("#update-div").show()
+    });
+</script>
+<script type="text/javascript">
+    $(".edit-button").click(function () {
+        $("#incident-id").val($(this).data('id'));
+        $("#type-of-incident1").val($(this).data('name'));
+        $("#description").val($(this).data('desc'));
+        $("incident-table").hide();
+        $("#update-div").show()
+
+    });
+
+    $(".deletei").click(function () {
+        $("#inci-id").val($(this).data('id'));
+
+    });
+    $("#cancel").click(function () {
+        $("#incident-table").show();
+        $("#update-div").hide()
+    });
+</script>
+{% endblock %}

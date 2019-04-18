@@ -1,0 +1,64 @@
+<form action="{{ url_for('updateappo') }}" method="post">
+    <div class="md-modal md-effect-19" id="modal-18" tabindex="-1" style="z-index: 100 !important;">
+        <div class="md-content">
+
+            <h3>Appointment</h3>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="col-form-label" style="color: black">User Name:</label>
+                        <select class="js-example-data-array col-sm-12 form-control form-control-round"
+                                name="client">
+                            {% for value in values2 %}
+                            <option value="{{value[0]}}">{{value[1]}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label" style="color: black"><b>Date of Appointment</b></label>
+                        <input id="dropper-default1"
+                               class="form-control datepicker form-control form-control-round"
+                               type="text" name="date"/>
+                        <input type="hidden" name="appo_id" id="appo-id">
+                    </div>
+                     <div class="form-group">
+                        <label class="col-form-label" style="color: black">Mobile Number</label>
+                        <input type="text" class="form-control form-control-round Number" maxlength="10" name="mno">
+                    </div>
+
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class=" col-form-label" style="color: black"><b>Animal Name</b></label><br>
+                        <select class="js-example-data-array col-sm-12 form-control form-control-round"
+                                name="species_id">
+                            {% for value in values1 %}
+                            <option value="{{value[0]}}">{{value[1]}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Appointment Time:</label>
+                        <input class="form-control form-control form-control-round" type="time"
+                               name="time"/>
+                    </div>
+                </div>
+            </div>
+            <center>
+                <button type="button"
+                        class="btn btn-danger btn-round waves-effect waves-light md-close">
+                    Close
+                </button>
+                <button type="submit"
+                        class="btn btn-success btn-round waves-effect waves-light md-close">
+                    Submit
+                </button>
+            </center>
+            <br>
+
+        </div>
+    </div>
+
+</form>
+

@@ -1,0 +1,24 @@
+<form action="{{url_for('deletec')}}" method="post" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html">
+    <div class="md-modal md-effect-2" id="modal-2">
+        <div class="md-content">
+            <h3>Delete</h3>
+            <div>
+                <strong>You are going to Delete this forever !!</strong><br>
+                <input type="hidden" name="color2_id" id="color2-id">
+                <br>
+            <center>
+                <button type="button"
+                        class="btn btn-primary waves-effect md-close">
+                    Close
+                </button>
+                <button type="submit"
+                        class="btn btn-danger waves-effect">
+                    Delete
+                </button>
+            </center>
+
+            </div>
+        </div>
+    </div>
+</form>

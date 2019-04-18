@@ -1,0 +1,89 @@
+<form action="{{ url_for('updatetreat') }}" method="post">
+    <div class="md-modal md-effect-19" id="modal-19" tabindex="-1" style="z-index: 100 !important;">
+
+        <div class="md-content">
+
+            <h3>Treatment</h3>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class=" col-form-label" style="color: black"><b>Animal Name</b></label><br>
+                        <select class="js-example-data-array col-sm-12 form-control form-control-round"
+                                name="species_id">
+                            {% for value in values%}
+                            <option value="{{value[0]}}">{{value[1]}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" style="color: black"><b>Test Date</b></label>
+                        <input id="dropper-default"
+                               class="form-control datepicker form-control form-control-round"
+                               type="text" name="testD"/>
+                        <input type="hidden" name="treat_id" id="treat_id">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" style="color: black"><b>Treatment Name</b></label>
+                        <input type="text" class="form-control form-control-round" id="c_id"
+                               name="tretment">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" style="color: black"><b>Comment</b></label>
+                        <input type="text" class="form-control form-control-round" id="co_id"
+                               name="comment">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" style="color: black"><b>Cost</b></label>
+                        <input type="text" class="form-control form-control-round" id="c_id"
+                               name="cost" style="width: 100%">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class=" col-form-label" style="color: black"><b>Test Type</b></label>
+                        <select class="js-example-data-array col-sm-12 form-control form-control-round" name="test">
+                            {% for value in values1 %}
+                            <option value="{{value[0]}}">{{value[1]}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class=" control-label" style="color: black"><b>Result</b></label><br>
+                        <select class="js-example-data-array col-sm-12 form-control form-control-round" name="result">
+                            <option>Positive</option>
+                            <option>Negative</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label" style="color: black"><b>Decease Name</b></label>
+                        <input type="text" class="form-control form-control-round" id="c_id"
+                               name="Decease">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" style="color: black"><b>certificate</b></label>
+                        <input type="file" class="form-control form-control-round" id="c_id"
+                               name="certificate">
+                    </div>
+                </div>
+            </div>
+            <center>
+                <button type="button"
+                        class="btn btn-success btn-round waves-effect waves-light md-close">
+                    Close
+                </button>
+                <button type="submit"
+                        class="btn btn-danger btn-round waves-effect waves-light md-close">
+                    Submit
+                </button>
+            </center>
+            <br>
+
+        </div>
+    </div>
+
+</form>
+
